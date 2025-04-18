@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Old Money Style Guide - Checkout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background: #0f0f0f;
+      color: #f3f3f3;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #000;
+      color: #f5f5dc;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #b89f68;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 60px;
+      background: #f3f1e8;
+      box-shadow: 0 0 80px rgba(0,0,0,0.6);
+      border-radius: 30px;
+      color: #1c1c1c;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+    .left, .right {
+      flex: 1 1 400px;
+    }
+    .product-image {
+      width: 100%;
+      max-width: 450px;
+      display: block;
+      border-radius: 20px;
+      border: 4px solid #b89f68;
+      box-shadow: 0 0 40px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 48px;
+      color: #1c1c1c;
+      margin-bottom: 20px;
+    }
+    .price {
+      font-size: 32px;
+      color: #b89f68;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+    .description {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    ul li::before {
+      content: "✨ ";
+    }
+    .buy-button {
+      background: linear-gradient(45deg, #b89f68, #8e6f3e);
+      color: white;
+      font-size: 22px;
+      padding: 16px 45px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      margin-top: 40px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .buy-button:hover {
+      background: #1c1c1c;
+      color: #fff;
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin: 60px 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>Old Money Checkout</header>
+  <div class="container">
+    <div class="left">
+      <img src="product-image.jpg.png" alt="Old Money Style Guide" class="product-image" />
+    </div>
+    <div class="right">
+      <h1>Old Money Style Guide</h1>
+      <div class="price">$9.99 USDT (TRC20)</div>
+      <div class="description">
+        <p><strong>Step into elegance. Live the Old Money way.</strong></p>
+        <p>This powerful digital guide is your key to mastering the timeless <em>Old Money aesthetic</em> — a style built on subtle luxury, quiet confidence, and effortless class.</p>
+        <ul>
+          <li>The golden rules of Old Money fashion</li>
+          <li>What to wear (and what to avoid) for every occasion</li>
+          <li>Visual comparisons to clearly show the do's & don'ts</li>
+          <li>Styling tips to instantly elevate your look — even on a budget</li>
+        </ul>
+        <p>Whether you're building your personal brand, upgrading your wardrobe, or simply want to <em>look like money without flashing it</em> — this guide is your shortcut to classic sophistication.</p>
+        <p><strong>💡 Designed for modern young men ready to level up.</strong></p>
+        <p><strong>📥 Instant download after purchase.</strong></p>
+        <button class="buy-button" onclick="window.location.href='https://usdt-payment-checker-1.onrender.com/verify'">Proceed to Payment</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer">&copy; 2025 Old Money Co. — All rights reserved.</div>
+</body>
+</html>
