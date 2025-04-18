@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Verification - Old Money Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: #1c1c1c;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e0c200;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    a.download {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Verify Your Payment</h2>
+    <p>Enter your USDT TRC20 Transaction ID (TX ID):</p>
+    <input type="text" id="txid" placeholder="Enter your TX ID here">
+    <button onclick="verifyTx()">Verify</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    async function verifyTx() {
+      const txid = document.getElementById('txid').value.trim();
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = 'Verifying... ⏳';
+
+      try {
+        const response = await fetch(`/verify?txid=${txid}`);
+        const data = await response.json();
+
+        if (data.success) {
+          resultDiv.innerHTML = '✅ Payment confirmed! You can now download your guide:';
+          resultDiv.innerHTML += `<br><a class="download" href="${data.download}" target="_blank">Download Old Money Guide</a>`;
+        } else {
+          resultDiv.innerHTML = '❌ ' + data.message;
+        }
+      } catch (err) {
+        resultDiv.innerHTML = '⚠️ Error verifying transaction.';
+      }
+    }
+  </script>
+</body>
+</html>
