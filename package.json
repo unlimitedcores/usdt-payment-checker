@@ -1,13 +1,12 @@
-
 {
-  "name": "usdt-payment-checker",
+  "name": "usdt-checker",
   "version": "1.0.0",
-  "description": "USDT payment and digital delivery page",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "axios": "^1.6.0"
   }
 }
